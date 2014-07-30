@@ -14,28 +14,35 @@
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 
-Route::get('/', function() {
-   
-//    $user = User::all();
+//Route::get('/', function() {
+//   
+////    $user = User::all();
+//
+////    $user = new User();
+////    $user->username = 'NewUser';
+////    $user->password = Hash::make('password');
+////    $user->save();
+//
+//    
+////    User::create([
+////        'username' => 'AnotherUser1',
+////        'password' => Hash::make('12345')
+////    ]);
+// 
+////    $user = User::find(4);
+////    $user->username = 'UpdatedName';
+////    $user->save();
+// 
+////    $user = User::find(6);
+////    $user->delete();
+//    
+//    return User::orderBy('username', 'asc')->take(2)->get();
+//    
+//});
 
-//    $user = new User();
-//    $user->username = 'NewUser';
-//    $user->password = Hash::make('password');
-//    $user->save();
+// Static routes
+//Route::get('users', 'UsersController@index');
+//Route::get('users/{username}', 'UsersController@show');
 
-    
-//    User::create([
-//        'username' => 'AnotherUser1',
-//        'password' => Hash::make('12345')
-//    ]);
- 
-//    $user = User::find(4);
-//    $user->username = 'UpdatedName';
-//    $user->save();
- 
-//    $user = User::find(6);
-//    $user->delete();
-    
-    return User::orderBy('username', 'asc')->take(2)->get();
-    
-});
+// Or Resource route - best for CRUD actions
+Route::resource('users', 'UsersController');

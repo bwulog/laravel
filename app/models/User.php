@@ -9,8 +9,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
         
+        // No timestamps for my demo user table
         public $timestamps = false;
         
+        // Only these fields allow to MassAssigment
         protected $fillable = ['username', 'password'];
 
         /**
